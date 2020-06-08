@@ -21,12 +21,8 @@ nav.navbar {
     }
 }
 
-// About Section and Dropdown
-section.aboutNav {
-    background: rgba($primary-3, 1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-div.aboutNav {
+// About Dropdown
+div.aboutDropdown {
     position: fixed;
     left: 0;
     right: 0;
@@ -39,8 +35,7 @@ div.aboutNav {
         border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
 }
-section.aboutNav,
-div.aboutNav {
+div.aboutDropdown {
     .dropdown-tab.text-light .dropdown-item {
         color: rgba(255, 255, 255, 0.5);
 
