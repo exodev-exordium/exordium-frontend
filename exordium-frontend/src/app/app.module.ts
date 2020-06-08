@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Plugins
+import { RecaptchaModule, RecaptchaFormsModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recaptcha';
+import { InlineSVGModule } from 'ng-inline-svg';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,9 +48,29 @@ import { AuthorComponent } from './_pages/blog/author/author.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxDatatableModule,
+    HttpClientModule,
+    InlineSVGModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide : LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: '6LeB5uIUAAAAAMQWnwCUpUHbdsHO4iV4emdn9KOL'
+      } as RecaptchaSettings,
+    }
+  ],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
