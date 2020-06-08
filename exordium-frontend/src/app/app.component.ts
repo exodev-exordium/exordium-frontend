@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, HostListener, Host } from '@angular/core';
 import { transition, trigger, query, style, animate } from '@angular/animations';
 import { Event, Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+
+import * as jQuery from 'jquery';
+const $ = jQuery;
 
 @Component({
   selector: 'app-root',
@@ -31,14 +35,15 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   loading: boolean;
+  windowScrolled: boolean;
 
   constructor(
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    @Inject (DOCUMENT) private document: Document,
   ) { }
 
   ngOnInit() {
-
     this.router.events.subscribe((event: Event) => {
       switch (true) {
         case event instanceof NavigationStart: {
@@ -67,6 +72,10 @@ export class AppComponent implements OnInit {
         }
       }
     });
+
+    $('.navbar-toggler').click(() => {
+      $('nav.navbar').toggleClass('navbar-open');
+    });
   }
 
   getTitle(state, parent) {
@@ -80,6 +89,32 @@ export class AppComponent implements OnInit {
     }
 
     return data;
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    if (window.pageXOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+      this.windowScrolled = true;
+
+      if (!$('nav.navbar').hasClass('scrolled')) {
+        $('nav.navbar').addClass('position-fixed scrolled');
+      }
+
+      if (!$('.nav-dashboard-wrapper').hasClass('scrolled')) {
+        $('.nav-dashboard-wrapper').addClass('position-fixed scrolled');
+      }
+
+    } else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+      this.windowScrolled = true;
+
+      if ($('nav.navbar').hasClass('scrolled')) {
+        $('nav.navbar').removeClass('position-fixed scrolled');
+      }
+
+      if ($('.nav-dashboard-wrapper').hasClass('scrolled')) {
+        $('.nav-dashboard-wrapper').removeClass('position-fixed scrolled');
+      }
+    }
   }
 
 }
