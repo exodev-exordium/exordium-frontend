@@ -1,0 +1,273 @@
+// Navbar/Header Styles
+nav.navbar {
+    -webkit-transition: background 200ms ease-in-out;
+    -moz-transition: background 200ms ease-in-out;
+    -o-transition: background 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
+
+    &.navbar-overlay {
+        position: absolute;
+        z-index: 999;
+
+        &.scrolled {
+            z-index: 1030;
+        }
+
+        &.navbar-open,
+        &.scrolled.navbar-dark {
+            background: rgba($primary-3, 0.90);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+    }
+}
+
+// About Section and Dropdown
+section.aboutNav {
+    background: rgba($primary-3, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+div.aboutNav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999999;
+
+    .about-dark {
+        background: rgba($primary-3, 0.90);
+        backdrop-filter: saturate(180%) blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+}
+section.aboutNav,
+div.aboutNav {
+    .dropdown-tab.text-light .dropdown-item {
+        color: rgba(255, 255, 255, 0.5);
+
+        &:hover {
+            color: rgba(255, 255, 255, 1) !important;
+        }
+
+        &:active,
+        &.active {
+            color: rgba(255, 255, 255, .75);
+        }
+    }
+}
+
+// Dashboard Menu
+.dashboard-nav-container {
+    position: relative;
+
+    .nav-dashboard-wrapper {
+        position: absolute;
+        transition: background 200ms ease-in-out;
+        width: 100%;
+        z-index: 998;
+
+        &.nav-dashboard-dark.scrolled,
+        &.nav-dashboard-light.scrolled {
+            backdrop-filter: saturate(180%) blur(20px);
+            box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.08);
+        }
+
+        &.nav-dashboard-dark {
+
+            &.scrolled {
+                background: rgba($primary-3, 0.90);
+                border-bottom: 1px solid #222324;
+            }
+
+            .nav li {
+                a.nav-link {
+                    color: rgba(255, 255, 255, 0.5);
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.75);
+                    }
+                }
+                a.nav-link.active {
+                    color: rgba(255, 255, 255, 0.95);
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 1);
+                    }
+                }
+                a.nav-link.disabled {
+                    opacity: 0.5;
+                }
+            }
+        }
+        &.nav-dashboard-light {
+
+            &.scrolled {
+                background: rgba(255, 255, 255, 0.9);
+                border-bottom: 1px solid #dee2e6;
+            }
+
+        }
+    }
+}
+
+// ng-invalid and ng-valid fields
+button,
+input,
+textarea {
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+input.ng-invalid, 
+input.ng-valid,
+textarea.ng-invalid, 
+textarea.ng-valid {
+    padding-right: 2.375rem;
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.input-group-prepend.ng-invalid .input-group-text,
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid {
+    border-color: #dc3545;
+
+    &:focus {
+        border-color: #dc3545;
+    }
+}
+.input-group-prepend.ng-invalid .input-group-text {
+    color: #dc3545;
+}
+input.ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E");
+}
+
+.input-group-prepend.ng-valid .input-group-text,
+input.ng-dirty.ng-valid,
+textarea.ng-dirty.ng-valid {
+    border-color: #28a745;
+
+    &:focus {
+        border-color: #28a745;
+    }
+}
+.input-group-prepend.ng-valid .input-group-text {
+    color: #28a745;
+}
+input.ng-dirty.ng-valid,
+textarea.ng-dirty.ng-valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+}
+
+// custom checkbox switch
+.custom-switch .custom-control-label:before {
+    background-color: #c2c8ce;
+    border-color: #aeb6be;
+}
+
+// bootstrap-notify
+.notifyAlert {
+    position: absolute;
+    height: 3px !important;
+    min-height: 3px !important;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 !important;
+
+    .progress-bar {
+        border-radius: 0px 2px 2px 0px !important;
+        transition: width 2s ease;
+    }
+}
+
+// Members page, bottom overlay link
+.btn-link-overlay {
+    font-weight: bold;
+    color: rgba(255,255,255,.75);
+
+    &:hover {
+        color: rgba(255,255,255,1) !important;
+    }
+}
+
+// text-bold 
+.text-bold {
+    font-weight: bold;
+}
+
+// Section Margin (Overlay Header)
+.mt-7 {
+    margin-top: 7em !important;
+}
+.mt-11 {
+    margin-top: 11em !important;
+}
+
+// Connections Section
+.connections-item {
+    background: #f1f1f2;
+    padding: 0.75rem !important;
+    border-radius: 10px;
+    margin-bottom: 0.75rem !important;
+
+    .connections-country {
+        display:table-cell; 
+        vertical-align:middle; 
+        text-align:center;
+        max-height: 38px;
+        overflow: hidden;
+        padding: 0 1rem;
+
+        img {
+            max-width: 32px;
+        }
+    }
+    .connections-nav {
+        .nav-item {
+            text-transform: uppercase;
+            
+            .nav-link i.fa {
+                margin-right: 0.75rem !important;
+            }
+        }
+    }
+}
+
+// Dropdowns
+.dropdown-menu {
+    &::before,
+    &::after {
+        position: absolute;
+        display: inline-block;
+        content: "";
+    }
+    &::before {
+        border: 8px solid transparent;
+        border-bottom-color: rgba(27,31,35,.15);
+        top: -16px;
+        right: 15px;
+        left: auto;
+    }
+    &::after {
+        top: -14px;
+        right: 16px;
+        left: auto;
+        border: 7px solid transparent;
+        border-bottom-color: #fff;
+    }
+
+    .dropdown-divider {
+        margin: 0.75rem 0 !important;
+    }
+}
+
+// Sidebar Menu
+.user-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10.5rem;
+}
