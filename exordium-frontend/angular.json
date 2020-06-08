@@ -30,7 +30,29 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/pace/pace.js",
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/aos.js",
+              "src/assets/js/clipboard.js",
+              "src/assets/js/jquery.fancybox.min.js",
+              "src/assets/js/flatpickr.min.js",
+              "src/assets/js/flickity.pkgd.min.js",
+              "src/assets/js/ion.rangeSlider.min.js",
+              "src/assets/js/isotope.pkgd.min.js",
+              "src/assets/js/jquery.countdown.min.js",
+              "src/assets/js/jquery.smartWizard.min.js",
+              "src/assets/js/plyr.polyfilled.min.js",
+              "src/assets/js/prism.js",
+              "src/assets/js/scrollMonitor.js",
+              "src/assets/js/smooth-scroll.polyfills.min.js",
+              "src/assets/js/svg-injector.umd.production.js",
+              "src/assets/js/twitterFetcher_min.js",
+              "src/assets/js/typed.min.js",
+              "src/assets/js/theme.js"
+            ]
           },
           "configurations": {
             "production": {

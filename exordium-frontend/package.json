@@ -24,6 +24,7 @@
     "ng-recaptcha": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typed.js": "^2.0.11",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
