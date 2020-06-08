@@ -24,10 +24,19 @@ nav.navbar {
 // About Dropdown
 div.aboutDropdown {
     position: fixed;
+    top: 64.25px;
     left: 0;
     right: 0;
     width: 100%;
     z-index: 999999;
+
+    // So that the about nav sticks under the main nav and looks good
+    @media (min-width: 1200px) {
+        top: 73px;
+    }
+    @media (max-width: 1200px) and (min-width: 768px) {
+        top: 68.38px;
+    }
 
     .about-dark {
         background: rgba($primary-3, 0.90);
