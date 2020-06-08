@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { jarallax } from 'jarallax';
+
+import { ContactService } from 'src/app/__services/contact.service';
+
+import * as jQuery from 'jquery';
+const $ = jQuery;
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +17,9 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private contactService: ContactService,
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +46,25 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
+    const sourceButton = $('.submitContact');
+
+    sourceButton.attr('disabled', true);
+    sourceButton.addClass('m-progress');
+
+    if (this.contactForm.invalid) {
+      this.toastr.error('Please make sure you entered the contact form in correctly!');
+    } else {
+      this.contactService.sendContact(this.contactForm.value).subscribe((res) => {
+        this.toastr.success('Your contact request has been submitted to our customer support team, we will get back to you soon!');
+      }, (err) => {
+        this.toastr.error(err);
+      });
+    }
+
+    setTimeout(() => {
+      sourceButton.removeAttr('disabled');
+      sourceButton.removeClass('m-progress');
+    }, 2000);
 
   }
 
