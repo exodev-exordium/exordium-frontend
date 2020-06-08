@@ -17,6 +17,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './_components/header/header.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { SidebarComponent } from './_components/sidebar/sidebar.component';
+import { ScrollbackComponent } from './_components/scrollback/scrollback.component';
 
 // Pages
 import { WelcomeComponent } from './_pages/welcome/welcome.component';
@@ -44,7 +45,8 @@ import { AuthorComponent } from './_pages/blog/author/author.component';
     LegalComponent,
     OverviewComponent,
     ArticleComponent,
-    AuthorComponent
+    AuthorComponent,
+    ScrollbackComponent
   ],
   imports: [
     BrowserModule,
