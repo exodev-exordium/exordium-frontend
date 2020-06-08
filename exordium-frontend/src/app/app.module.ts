@@ -23,9 +23,13 @@ import { ScrollbackComponent } from './_components/scrollback/scrollback.compone
 import { WelcomeComponent } from './_pages/welcome/welcome.component';
 import { PricingComponent } from './_pages/pricing/pricing.component';
 import { DownloadComponent } from './_pages/download/download.component';
+
 import { AboutComponent } from './_pages/company/about/about.component';
 import { ContactComponent } from './_pages/company/contact/contact.component';
 import { LegalComponent } from './_pages/company/legal/legal.component';
+import { JobsComponent } from './_pages/company/jobs/jobs.component';
+import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
+
 import { OverviewComponent } from './_pages/blog/overview/overview.component';
 import { ArticleComponent } from './_pages/blog/article/article.component';
 import { AuthorComponent } from './_pages/blog/author/author.component';
@@ -35,18 +39,22 @@ import { AuthorComponent } from './_pages/blog/author/author.component';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    ScrollbackComponent,
 
     AppComponent,
     WelcomeComponent,
     PricingComponent,
     DownloadComponent,
+
     AboutComponent,
     ContactComponent,
     LegalComponent,
+    JobsComponent,
+    ReviewsComponent,
+
     OverviewComponent,
     ArticleComponent,
-    AuthorComponent,
-    ScrollbackComponent
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
