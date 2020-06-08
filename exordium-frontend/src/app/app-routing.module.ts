@@ -11,6 +11,9 @@ import { DownloadComponent } from './_pages/download/download.component';
 // Company
 import { AboutComponent } from './_pages/company/about/about.component';
 import { ContactComponent } from './_pages/company/contact/contact.component';
+import { LegalComponent } from './_pages/company/legal/legal.component';
+import { JobsComponent } from './_pages/company/jobs/jobs.component';
+import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
 
 
 const routes: Routes = [
@@ -44,6 +47,20 @@ const routes: Routes = [
     }
   },
   {
+    path: 'general',
+    component: WelcomeComponent,
+    data: {
+      title: 'General'
+    }
+  },
+  {
+    path: 'resources',
+    component: WelcomeComponent,
+    data: {
+      title: 'Resources'
+    }
+  },
+  {
     path: 'blog',
     component: WelcomeComponent,
     data: {
@@ -69,9 +86,23 @@ const routes: Routes = [
       },
       {
         path: 'legal',
-        component: WelcomeComponent,
+        component: LegalComponent,
         data: {
           title: 'Legal Information'
+        }
+      },
+      {
+        path: 'jobs',
+        component: JobsComponent,
+        data: {
+          title: 'Jobs'
+        }
+      },
+      {
+        path: 'reviews',
+        component: ReviewsComponent,
+        data: {
+          title: 'Service Reviews'
         }
       }
     ]
