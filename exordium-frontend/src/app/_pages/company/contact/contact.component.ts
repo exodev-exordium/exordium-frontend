@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       company: [null],
       phone: [null],
-      message: [null, Validators.required],
+      message: [null, [Validators.required, Validators.minLength(20)]],
       recaptcha: [null, Validators.required]
     });
 
@@ -57,7 +57,9 @@ export class ContactComponent implements OnInit {
       this.contactService.sendContact(this.contactForm.value).subscribe((res) => {
         this.toastr.success('Your contact request has been submitted to our customer support team, we will get back to you soon!');
       }, (err) => {
-        this.toastr.error(err);
+        console.log(err);
+
+        this.toastr.error(err[0].msg);
       });
     }
 
