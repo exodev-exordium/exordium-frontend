@@ -1,0 +1,56 @@
+/* Common Loader CSS */
+
+@keyframes hideLoader{
+    0%{ width: 100%; height: 100%; }
+    100%{ width: 0; height: 0; }
+}
+body > div.loader{
+        position: fixed;
+        background: $primary-3;
+        width: 100%;
+        height: 100%;
+        z-index: 1071;
+        opacity: 0;
+        transition: opacity .5s ease;
+        overflow: hidden;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    body:not(.loaded) > div.loader{
+        opacity: 1;
+    }
+    body:not(.loaded){
+        overflow: hidden;
+    }
+body.loaded > div.loader{
+    animation: hideLoader .5s linear .5s forwards;
+}
+
+/* Square Animation */
+.loading-animation {
+    width: 72px;
+    height: 64px;
+    margin: 36px auto;
+    position: relative;
+}
+.loading-animation i:before {
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 2s linear infinite;
+    -moz-animation: hue 2s linear infinite;
+    animation: hue 2s linear infinite;
+}
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+  }
