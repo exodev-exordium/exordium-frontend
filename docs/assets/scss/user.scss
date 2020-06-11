@@ -1,0 +1,14 @@
+
+// import plugins
+@import "plugins/pace/pace";
+@import "plugins/fontawesome/fontawesome";
+@import "plugins/ng-select/default.theme";
+@import "plugins/ngx-datatable/ngx-datatable";
+//@import "plugins/ngx-toastr/ngx-toastr";
+@import '~ngx-toastr/toastr-bs4-alert';
+//@import "plugins/flag-icon/flag-icon.scss";
+
+// custom exordium overwrites
+@import "exordium/custom.progress";
+@import "exordium/custom.loader";
+@import "exordium/custom.theme";

@@ -11,6 +11,7 @@ import { InlineSVGModule } from 'ng-inline-svg';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ToastrModule } from 'ngx-toastr';
 
+// App Component and Routing
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -20,17 +21,19 @@ import { FooterComponent } from './_components/footer/footer.component';
 import { SidebarComponent } from './_components/sidebar/sidebar.component';
 import { ScrollbackComponent } from './_components/scrollback/scrollback.component';
 
-// Pages
+// Main Pages
 import { WelcomeComponent } from './_pages/welcome/welcome.component';
 import { PricingComponent } from './_pages/pricing/pricing.component';
 import { DownloadComponent } from './_pages/download/download.component';
 
+// Company Pages
 import { AboutComponent } from './_pages/company/about/about.component';
 import { ContactComponent } from './_pages/company/contact/contact.component';
 import { LegalComponent } from './_pages/company/legal/legal.component';
 import { JobsComponent } from './_pages/company/jobs/jobs.component';
 import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
 
+// Blog Pages
 import { OverviewComponent } from './_pages/blog/overview/overview.component';
 import { ArticleComponent } from './_pages/blog/article/article.component';
 import { AuthorComponent } from './_pages/blog/author/author.component';

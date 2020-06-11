@@ -1,154 +1,167 @@
 <section class="bg-dark text-light header-inner p-0 jarallax position-relative" data-jarallax data-speed="0.2" data-overlay>
-    <img src="assets/img/exordium/backgrounds/mountain3.jpg" alt="Image" class="jarallax-img opacity-20">
-    <div class="container py-0 pt-7">
-      <div class="row my-3">
-        <div class="col">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="/welcome">Exordium</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">Contact</li>
-            </ol>
-          </nav>
-        </div>
+  <img src="assets/img/exordium/backgrounds/mountain3.jpg" alt="Image" class="jarallax-img opacity-20">
+  <div class="container py-0 pt-7">
+    <div class="row my-3">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/welcome">Exordium</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol>
+        </nav>
       </div>
-      <div class="row my-4 my-md-6" data-aos="fade-up">
-        <div class="col-lg-9 col-xl-8">
-          <h1 class="display-4">Get In Touch</h1>
-          <p class="lead mb-0">Need to get in contact with our support team? Feel free to send us a message!</p>
+    </div>
+    <div class="row my-4 my-md-6" data-aos="fade-up">
+      <div class="col-lg-9 col-xl-8">
+        <h1 class="display-4">Get In Touch</h1>
+        <p class="lead mb-0">Need to get in contact with our support team? Feel free to send us a message!</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider">
+    <div [inlineSVG]="'assets/img/dividers/divider-3.svg'" [setSVGAttributes]="{ class: 'bg-primary-alt' }"></div> 
+  </div>
+</section>
+  
+<section class="bg-primary-2-alt">
+  <div class="container">
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-9 col-lg-8">
+        <div class="text-center mb-5">
+          <h2 class="h1">Leave a message</h2>
+          <p class="lead">Send us a message via our contact form, or feel free to contact us with our other contact methods listed on the side.
+          </p>
         </div>
       </div>
     </div>
-    <div class="divider">
-      <div [inlineSVG]="'assets/img/dividers/divider-3.svg'"></div> 
-    </div>
-  </section>
-  
-  <section>
-    <div class="container">
-  
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-9 col-lg-8">
-          <div class="text-center mb-5">
-            <h2 class="h1">Leave a message</h2>
-            <p class="lead">Send us a message via our contact form, or feel free to contact us with our other contact methods listed on the side.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-md-7 col-lg-8">
-          <div class="card shadow-sm mb-4">
-            <div class="card-body">
-  
-              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Your Name *</label>
-                      <input name="contact-name" type="text" formControlName="realname" placeholder="Ryan Reynolds" class="form-control" required>
-                      <div class="invalid-feedback">
-                        Please type your name.
-                      </div>
+
+    <div class="row">
+      <div class="col-md-7 col-lg-8">
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Your Name *</label>
+                    <input name="contact-name" type="text" formControlName="realname" placeholder="Ryan Reynolds" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please type your name.
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Email Address *</label>
-                      <input name="contact-email" type="email" formControlName="email" placeholder="you@yoursite.com" class="form-control" required>
-                      <div class="invalid-feedback">
-                        Please enter your email.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Company Name</label>
-                      <input name="contact-company" type="text" formControlName="company" placeholder="Deadpool Inc." class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label>Contact Number</label>
-                      <input name="contact-phone" type="tel" formControlName="phone" placeholder="14160001234" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label>Message:</label>
-                      <textarea formControlName="message" class="form-control" name="contact-message" rows="6" placeholder="How can we help?" required></textarea>
-                      <div class="invalid-feedback">
-                        What would you like to tell us?
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <label>Prove that you're human *</label>
-                      <re-captcha 
-                        formControlName="recaptcha"
-                      ></re-captcha>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <button type="submit" class="btn btn-primary submitContact">
-                      Send Enquiry
-                    </button>
                   </div>
                 </div>
-              </form>
-  
-            </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Email Address *</label>
+                    <input name="contact-email" type="email" formControlName="email" placeholder="you@yoursite.com" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please enter your email.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Company Name</label>
+                    <input name="contact-company" type="text" formControlName="company" placeholder="Deadpool Inc." class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Contact Number</label>
+                    <input name="contact-phone" type="tel" formControlName="phone" placeholder="14160001234" class="form-control">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Message:</label>
+                    <textarea formControlName="message" class="form-control" name="contact-message" rows="6" placeholder="How can we help?" required></textarea>
+                    <div class="invalid-feedback">
+                      Please make sure that you have atleast 20 characters in your message, so we understand exactly what you're contacting us for :)
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Prove that you're human *</label>
+                    <re-captcha 
+                      formControlName="recaptcha"
+                    ></re-captcha>
+                  </div>
+                </div>
+                <div class="col">
+                  <button type="submit" class="btn btn-primary submitContact">
+                    Send Enquiry
+                  </button>
+                </div>
+              </div>
+            </form>
+
           </div>
-        </div>
-        <div class="col-md-5 col-lg-4">
-          <div class="card shadow-sm">
-            <div class="card-body">
-  
-              <ul class="list-unstyled">
-                <li class="mb-3 d-flex">
-                  <div>
-                    <i class="fa fa-lg fa-fw fa-map-marker-alt text-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <span>Auk Trail
-                      <br>Lindsay, Ontario</span>
-                  </div>
-                </li>
-                <li class="mb-3 d-flex">
-                  <div>
-                    <i class="fa fa-lg fa-fw fa-phone text-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <span>+1 (650) 333-3324</span>
-                    <span class="d-block text-muted text-small">Always Open</span>
-                  </div>
-                </li>
-                <li class="mb-3 d-flex">
-                  <div>
-                    <i class="fa fa-lg fa-fw fa-envelope text-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <a href="mailto:support@exordium.dev">support@exordium.dev</a>
-                  </div>
-                </li>
-                <li class="mb-3 d-flex">
-                  <div>
-                    <i class="fab fa-lg fa-fw fa-discord text-primary"></i>
-                  </div>
-                  <div class="ml-3">
-                    <a href="https://discord.exordium.dev">discord.exordium.dev</a>
-                  </div>
-                </li>
-              </ul>
-  
-            </div>
-          </div>
-  
         </div>
       </div>
+      <div class="col-md-5 col-lg-4">
+
+        <div class="card card-body justify-content-between bg-primary-3 text-light shadow mb-5">
+          <img src="assets/img/exordium/backgrounds/mountain1.jpg" alt="Image" class="bg-image opacity-20">
+          <div class="d-flex position-relative">
+            <div class="ml-3">
+              <a href="javascript:void(Tawk_API.toggle())">
+                <h4 class="mb-1">Live Support</h4>
+                <span class="text-small opacity-70">We have a live support team that is here to assist you on the spot if you need!</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-body">
+
+            <ul class="list-unstyled">
+              <li class="mb-3 d-flex">
+                <div>
+                  <i class="fa fa-lg fa-fw fa-map-marker-alt text-primary"></i>
+                </div>
+                <div class="ml-3">
+                  <span>Auk Trail
+                    <br>Lindsay, Ontario</span>
+                </div>
+              </li>
+              <li class="mb-3 d-flex">
+                <div>
+                  <i class="fa fa-lg fa-fw fa-phone text-primary"></i>
+                </div>
+                <div class="ml-3">
+                  <span>+1 (650) 333-3324</span>
+                  <span class="d-block text-muted text-small">Always Open</span>
+                </div>
+              </li>
+              <li class="mb-3 d-flex">
+                <div>
+                  <i class="fa fa-lg fa-fw fa-envelope text-primary"></i>
+                </div>
+                <div class="ml-3">
+                  <a href="mailto:support@exordium.org">support@exordium.org</a>
+                </div>
+              </li>
+              <li class="mb-3 d-flex">
+                <div>
+                  <i class="fab fa-lg fa-fw fa-discord text-primary"></i>
+                </div>
+                <div class="ml-3">
+                  <a href="https://discord.exordium.dev">discord.exordium.org</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
     </div>
-  </section>
+  </div>
+</section>
