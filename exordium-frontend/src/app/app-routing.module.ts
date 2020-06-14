@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Routing
-import { CompanyModule } from './_pages/company/company.module';
 import { BlogModule } from './_pages/blog/blog.module';
+import { GeneralModule } from './_pages/general/general.module';
+import { ResourcesModule } from './_pages/resources/resources.module';
+import { CompanyModule } from './_pages/company/company.module';
 
 // Main
 import { WelcomeComponent } from './_pages/welcome/welcome.component';
@@ -46,6 +48,8 @@ const routes: Routes = [
   imports: [
     CompanyModule,
     BlogModule,
+    GeneralModule,
+    ResourcesModule,
     RouterModule.forRoot(
       routes,
       {
