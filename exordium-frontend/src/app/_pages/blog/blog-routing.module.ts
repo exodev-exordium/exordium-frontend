@@ -3,28 +3,35 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Blog
 import { OverviewComponent } from './overview/overview.component';
+import { ArticleComponent } from './article/article.component';
+import { AuthorComponent } from './author/author.component';
 
 const routes: Routes = [
   {
-    path: 'general',
-    component: OverviewComponent,
-    data: {
-      title: 'General'
-    }
-  },
-  {
-    path: 'resources',
-    component: OverviewComponent,
-    data: {
-      title: 'Resources'
-    }
-  },
-  {
     path: 'blog',
-    component: OverviewComponent,
-    data: {
-      title: 'Blog'
-    }
+    children: [
+      {
+        path: '',
+        component: OverviewComponent,
+        data: {
+          title: 'Blog'
+        }
+      },
+      {
+        path: ':id',
+        component: ArticleComponent,
+        data: {
+          title: 'Article'
+        }
+      },
+      {
+        path: 'author/:id',
+        component: AuthorComponent,
+        data: {
+          title: 'Author'
+        }
+      },
+    ]
   }
 ];
 
