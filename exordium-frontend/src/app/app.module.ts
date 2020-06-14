@@ -26,17 +26,27 @@ import { WelcomeComponent } from './_pages/welcome/welcome.component';
 import { PricingComponent } from './_pages/pricing/pricing.component';
 import { DownloadComponent } from './_pages/download/download.component';
 
+// General
+import { LocationsComponent } from './_pages/general/locations/locations.component';
+import { NetworkStatusComponent } from './_pages/general/network-status/network-status.component';
+import { SupportComponent } from './_pages/general/support/support.component';
+
+// Resources
+import { ReasonsForAVpnComponent } from './_pages/resources/reasons-for-a-vpn/reasons-for-a-vpn.component';
+import { TutorialsComponent } from './_pages/resources/tutorials/tutorials.component';
+import { DocumentationComponent } from './_pages/resources/documentation/documentation.component';
+
+// Blog Pages
+import { OverviewComponent } from './_pages/blog/overview/overview.component';
+import { ArticleComponent } from './_pages/blog/article/article.component';
+import { AuthorComponent } from './_pages/blog/author/author.component';
+
 // Company Pages
 import { AboutComponent } from './_pages/company/about/about.component';
 import { ContactComponent } from './_pages/company/contact/contact.component';
 import { LegalComponent } from './_pages/company/legal/legal.component';
 import { JobsComponent } from './_pages/company/jobs/jobs.component';
 import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
-
-// Blog Pages
-import { OverviewComponent } from './_pages/blog/overview/overview.component';
-import { ArticleComponent } from './_pages/blog/article/article.component';
-import { AuthorComponent } from './_pages/blog/author/author.component';
 
 @NgModule({
   declarations: [
@@ -50,15 +60,23 @@ import { AuthorComponent } from './_pages/blog/author/author.component';
     PricingComponent,
     DownloadComponent,
 
+    LocationsComponent,
+    NetworkStatusComponent,
+    SupportComponent,
+
+    ReasonsForAVpnComponent,
+    TutorialsComponent,
+    DocumentationComponent,
+
+    OverviewComponent,
+    ArticleComponent,
+    AuthorComponent,
+
     AboutComponent,
     ContactComponent,
     LegalComponent,
     JobsComponent,
-    ReviewsComponent,
-
-    OverviewComponent,
-    ArticleComponent,
-    AuthorComponent
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
