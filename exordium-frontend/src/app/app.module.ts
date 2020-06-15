@@ -44,9 +44,11 @@ import { AuthorComponent } from './_pages/blog/author/author.component';
 // Company Pages
 import { AboutComponent } from './_pages/company/about/about.component';
 import { ContactComponent } from './_pages/company/contact/contact.component';
+import { OurTeamComponent } from './_pages/company/our-team/our-team.component';
 import { LegalComponent } from './_pages/company/legal/legal.component';
 import { JobsComponent } from './_pages/company/jobs/jobs.component';
 import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,7 @@ import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
 
     AboutComponent,
     ContactComponent,
+    OurTeamComponent,
     LegalComponent,
     JobsComponent,
     ReviewsComponent
