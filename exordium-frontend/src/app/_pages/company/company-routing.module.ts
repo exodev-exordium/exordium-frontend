@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 // Company
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { OurTeamComponent } from './our-team/our-team.component';
 import { LegalComponent } from './legal/legal.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ReviewsComponent } from './reviews/reviews.component';
@@ -25,6 +26,13 @@ const routes: Routes = [
         component: ContactComponent,
         data: {
           title: 'Contact'
+        }
+      },
+      {
+        path: 'our-team',
+        component: OurTeamComponent,
+        data: {
+          title: 'Our Team'
         }
       },
       {
