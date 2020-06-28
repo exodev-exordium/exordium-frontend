@@ -1,5 +1,5 @@
 /* local theming */
 //@import "assets/scss/theme.scss";
 
-/* cdn theming */
-@import "//cdn.exordium.org/frontend.css";
+/* package theming */
+@import "~@exordium/scss-frontend/src/theme.scss";
