@@ -20,6 +20,7 @@ import { HeaderComponent } from './_components/header/header.component';
 import { FooterComponent } from './_components/footer/footer.component';
 import { SidebarComponent } from './_components/sidebar/sidebar.component';
 import { ScrollbackComponent } from './_components/scrollback/scrollback.component';
+import { NotyfToast } from './_components/notyf.toast';
 
 // Main Pages
 import { WelcomeComponent } from './_pages/welcome/welcome.component';
@@ -56,6 +57,7 @@ import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
     FooterComponent,
     SidebarComponent,
     ScrollbackComponent,
+    NotyfToast,
 
     AppComponent,
     WelcomeComponent,
@@ -92,10 +94,14 @@ import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
     HttpClientModule,
     InlineSVGModule.forRoot(),
     ToastrModule.forRoot({
-      timeOut: 10000,
+      toastComponent: NotyfToast,
+      timeOut: 6000,
       positionClass: 'toast-bottom-right'
     }),
     AppRoutingModule
+  ],
+  entryComponents: [
+    NotyfToast
   ],
   providers: [
     {
