@@ -12,6 +12,9 @@ import { WelcomeComponent } from './_pages/welcome/welcome.component';
 import { PricingComponent } from './_pages/pricing/pricing.component';
 import { DownloadComponent } from './_pages/download/download.component';
 
+// Error
+import { ErrorNotFoundComponent } from './_pages/error/error-not-found/error-not-found.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -41,6 +44,17 @@ const routes: Routes = [
     data: {
       title: 'Download'
     }
+  },
+  {
+    path: 'error/404',
+    component: ErrorNotFoundComponent,
+    data: {
+      title: 'Page Not Found'
+    }
+  },
+  {
+    path: '**',
+    redirectTo: 'error/404'
   }
 ];
 
