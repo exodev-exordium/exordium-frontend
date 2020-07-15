@@ -50,6 +50,9 @@ import { LegalComponent } from './_pages/company/legal/legal.component';
 import { JobsComponent } from './_pages/company/jobs/jobs.component';
 import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
 
+// Errors
+import { ErrorNotFoundComponent } from './_pages/error/error-not-found/error-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -81,7 +84,9 @@ import { ReviewsComponent } from './_pages/company/reviews/reviews.component';
     OurTeamComponent,
     LegalComponent,
     JobsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    
+    ErrorNotFoundComponent
   ],
   imports: [
     BrowserModule,
