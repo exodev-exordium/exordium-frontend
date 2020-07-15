@@ -1,1 +1,51 @@
-<p>article works!</p>
+<ng-template ngFor let-item [ngForOf]="post" let-i="index">
+
+    <section class="bg-dark text-light overlay min-vh-60 d-flex flex-column justify-content-end jarallax">
+        <img src="{{ getCover(item.cover) }}" alt="Image" class="jarallax-img opacity-50">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Exordium</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Blog</a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    <h1>{{ item.title }}</h1>
+                    <div class="d-flex align-items-center">
+                        <a href="javascript:;" routerLink="/blog/author/{{ item.created.person }}">
+                            <img src="{{ getProfile(item.author.profilepic) }}" alt="{{ item.author.username }}" class="avatar mr-2">
+                        </a>
+                        <div>
+                            <div>
+                                by <a href="javascript:;" routerLink="/blog/author/{{ item.created.person }}" class="text-capitalize">{{ item.author.username }}</a>
+                            </div>
+                            <div class="text-small text-muted">
+                                {{ item.created.createdAt | date: 'EEEE, MMMM d, y' }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-0" data-reading-position="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-10">
+                    <article class="article py-7" [innerHTML]="item.body"></article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</ng-template>
