@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from 'src/app/__services/blog.service';
 
 import * as $ from 'jquery';
@@ -16,6 +16,7 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private blogService: BlogService
   ) { }
 
@@ -26,6 +27,7 @@ export class ArticleComponent implements OnInit {
 
       if (!res.url) { // no response
         // redirect to error not found page
+        this.router.navigate(['/error/404']);
       }
     });
   }
