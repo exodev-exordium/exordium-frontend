@@ -25,7 +25,7 @@ export class ArticleComponent implements OnInit {
     this.blogService.getPost(this.route.snapshot.paramMap.get("id")).subscribe(res => {
       this.post = res;
 
-      if (!res.url) { // no response
+      if (!res[0].url) { // no response
         // redirect to error not found page
         this.router.navigate(['/error/404']);
       }
@@ -51,7 +51,7 @@ export class ArticleComponent implements OnInit {
 
   getProfile(link): string {
     if (!link) {
-      return "assets/img/exordium/default-profile.png";
+      return "assets/img/user-default/user-default.png";
     } else {
       return link;
     }
