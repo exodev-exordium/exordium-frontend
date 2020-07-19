@@ -18,14 +18,14 @@ const routes: Routes = [
         }
       },
       {
-        path: ':id',
+        path: ':post',
         component: ArticleComponent,
         data: {
           title: 'Article'
         }
       },
       {
-        path: 'author/:id',
+        path: 'author/:title/:username',
         component: AuthorComponent,
         data: {
           title: 'Author'
