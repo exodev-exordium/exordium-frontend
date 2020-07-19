@@ -1,1 +1,196 @@
-<p>overview works!</p>
+<section class="bg-dark text-light header-inner p-0 jarallax position-relative" data-jarallax data-speed="0.2" data-overlay>
+  <img src="assets/img/exordium/backgrounds/wireframe.png" alt="Image" class="jarallax-img opacity-20">
+  <div class="container py-0 pt-7">
+    <div class="row my-3">
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Exordium</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <div class="row my-4 my-md-6">
+      <div class="col-lg-9 col-xl-8">
+        <h1 class="display-4">Blog</h1>
+        <p class="lead mb-0">What have we been up to, where is our project going, and other important information!</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider">
+    <div [inlineSVG]="'assets/img/dividers/divider-3.svg'"></div> 
+  </div>
+</section>
+
+<section data-overlay="">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-8 col-lg-9">
+
+            <ng-template ngFor let-item [ngForOf]="posts" let-i="index">
+
+                <div class="pr-lg-4" *ngIf="!item.cover">
+                    <a href="javascript:;" routerLink="/blog/{{ item.url }}" class="card card-body justify-content-between text-light" [class.bg-primary]="!item.colour" [style.background-color]="item.colour">
+                      <div class="d-flex justify-content-between mb-3">
+                        <div class="text-small d-flex">
+                          <div class="mr-2">Development
+                          </div>
+                          <span class="opacity-70">{{ item.created.createdAt | date: 'MMMM d, y' }}</span>
+                        </div>
+                      </div>
+                      <div>
+                        <h2>{{ item.title }}</h2>
+                        <div [innerHTML]="item.body"></div>
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="{{ getProfile(item.author.profilepic) }}" alt="{{ item.author.username | titlecase }}" class="avatar avatar-sm">
+                            <div class="ml-1">
+                              <span class="text-small text-muted">By </span>
+                              <span class="text-small">{{ item.author.username | titlecase }}</span>
+                            </div>
+                          </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="pr-lg-4" *ngIf="item.cover">
+                    <div class="card card-article-wide flex-md-row no-gutters">
+                      <a href="javascript:;" routerLink="/blog/{{ item.url }}" class="col-md-4">
+                        <img src="{{ getCover(item.cover) }}" alt="{{ item.title }}" class="card-img-top">
+                      </a>
+                      <div class="card-body d-flex flex-column col-auto p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div class="text-small d-flex">
+                            <div class="mr-2">
+                              <a href="#">Exordium</a>
+                            </div>
+                            <span class="text-muted">{{ item.created.createdAt | date: 'MMMM d, y' }}</span>
+                          </div>
+                        </div>
+                        <a href="javascript:;" routerLink="/blog/{{ item.url }}">
+                          <h3>{{ item.title }}</h3>
+                        </a>
+                        <div [innerHTML]="item.body" class="flex-grow-1"></div>
+                        <div class="d-flex align-items-center mt-3">
+                          <img src="{{ getProfile(item.author.profilepic) }}" alt="{{ item.author.username | titlecase }}" class="avatar avatar-sm">
+                          <div class="ml-1">
+                            <span class="text-small text-muted">By </span>
+                            <span class="text-small">{{ item.author.username | titlecase }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+            </ng-template>
+
+          <div class="row justify-content-between align-items-center pr-lg-4">
+            <div class="col-auto">
+              <a href="#" class="btn btn-outline-white">Previous</a>
+            </div>
+            <div class="col-auto">
+              <nav>
+                <ul class="pagination mb-0">
+                  <li class="page-item active"><a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-auto">
+              <a href="#" class="btn btn-outline-white">Next</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 d-none d-md-block">
+          <div class="mb-4">
+            <h5>Newsletter</h5>
+            <form action="https://mailform.mediumra.re/leap/mailchimp.php" data-form-email="" novalidate="">
+              <div class="form-row">
+                <div class="col-12">
+                  <input type="email" class="form-control mb-2" placeholder="Email Address" name="email" required="">
+                </div>
+                <div class="col-12">
+                  <div class="d-none alert alert-success" role="alert" data-success-message="">
+                    Thanks, a member of our team will be in touch shortly.
+                  </div>
+                  <div class="d-none alert alert-danger" role="alert" data-error-message="">
+                    Please fill all fields correctly.
+                  </div>
+                  <div data-recaptcha="" data-sitekey="6Lemz4gUAAAAAElq4ZHFBzI7j8QUiYMn9I0mzQWG" data-size="invisible" data-badge="bottomleft"><div class="grecaptcha-badge" data-style="none" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Lemz4gUAAAAAElq4ZHFBzI7j8QUiYMn9I0mzQWG&amp;co=aHR0cHM6Ly9sZWFwLm1lZGl1bXJhLnJlOjQ0Mw..&amp;hl=en&amp;v=6uMSoEJtPugDt7Qm0Uu5iuSY&amp;size=invisible&amp;badge=bottomleft&amp;cb=voh9fon8tzqw" width="256" height="60" role="presentation" name="a-p0ulegwpgyx0" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-2" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                  <button type="submit" class="btn btn-primary btn-loading btn-block" data-loading-text="Sending">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="injected-svg icon" data-src="assets/img/icons/theme/code/loading.svg">
+  <title>Icon For Loading</title>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g>
+          <polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon>
+      </g>
+      <path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path>
+  </g>
+</svg>
+                    <span>Subscribe</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <small class="text-muted form-text">We’ll never share your details. See our <a href="#">Privacy Policy</a>
+            </small>
+
+          </div>
+          <div class="sticky-top mb-4">
+            <h5>Popular</h5>
+            <ul class="list-unstyled list-articles">
+              <li class="row row-tight">
+                <a href="#" class="col-3">
+                  <img src="assets/img/article-1.jpg" alt="Image" class="rounded">
+                </a>
+                <div class="col">
+                  <a href="#">
+                    <h6 class="mb-1">How to build collateral</h6>
+                  </a>
+                  <div class="d-flex text-small">
+                    <a href="#">Business</a>
+                    <span class="text-muted ml-1">29th November</span>
+                  </div>
+                </div>
+              </li>
+              <li class="row row-tight">
+                <a href="#" class="col-3">
+                  <img src="assets/img/article-2.jpg" alt="Image" class="rounded">
+                </a>
+                <div class="col">
+                  <a href="#">
+                    <h6 class="mb-1">Forging your path</h6>
+                  </a>
+                  <div class="d-flex text-small">
+                    <a href="#">Design</a>
+                    <span class="text-muted ml-1">27th November</span>
+                  </div>
+                </div>
+              </li>
+              <li class="row row-tight">
+                <a href="#" class="col-3">
+                  <img src="assets/img/article-3.jpg" alt="Image" class="rounded">
+                </a>
+                <div class="col">
+                  <a href="#">
+                    <h6 class="mb-1">Securing your Series A</h6>
+                  </a>
+                  <div class="d-flex text-small">
+                    <a href="#">Business</a>
+                    <span class="text-muted ml-1">23rd November</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
