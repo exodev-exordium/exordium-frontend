@@ -4,3 +4,7 @@ export class API {
     public endpoint = 'https://api.exordium.org';
     public headers = new HttpHeaders().set('Content-Type', 'application/json');
 }
+
+export class CDN {
+    public endpoint = 'https://api.exordium.org';
+}
