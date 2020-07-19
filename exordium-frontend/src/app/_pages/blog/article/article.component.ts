@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { CDN } from 'src/app/__services/shared/api.shared';
 import { BlogService } from 'src/app/__services/blog.service';
 
 import * as $ from 'jquery';
@@ -13,6 +15,7 @@ import { jarallax, jarallaxElement } from 'jarallax';
 export class ArticleComponent implements OnInit {
   // Blog Posts
   post: any[];
+  execute: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,8 +25,9 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     // Get Blog Data
-    this.blogService.getPost(this.route.snapshot.paramMap.get("id")).subscribe(res => {
+    this.blogService.getPost(this.route.snapshot.paramMap.get("post")).subscribe(res => {
       this.post = res;
+      console.log(res);
 
       if (!res[0].url) { // no response
         // redirect to error not found page
@@ -32,11 +36,15 @@ export class ArticleComponent implements OnInit {
     });
   }
 
-  jarallaxInit(): void {
-    jarallax(document.querySelectorAll('.jarallax'), {
-      speed: 0.3
-    });
-    jarallaxElement();
+  jarallaxInit() {
+    if (!this.execute) {
+      this.execute = true;
+
+      jarallax(document.querySelectorAll('.jarallax'), {
+        speed: 0.3
+      });
+      jarallaxElement();
+    }
   }
 
   getCover(cover): string {
@@ -45,7 +53,7 @@ export class ArticleComponent implements OnInit {
     if (!cover) {
       return "assets/img/exordium/backgrounds/mountain0.jpg";
     } else {
-      return cover;
+      return `${new CDN().endpoint}/public/uploads/blog/${cover}`;
     }
   }
 
