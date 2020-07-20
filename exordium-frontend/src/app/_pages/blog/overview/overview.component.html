@@ -36,7 +36,7 @@
                     <a href="javascript:;" routerLink="/blog/{{ item.url }}" class="card card-body justify-content-between text-light" [class.bg-primary]="!item.colour" [style.background-color]="item.colour">
                       <div class="d-flex justify-content-between mb-3">
                         <div class="text-small d-flex">
-                          <div class="mr-2">Development
+                          <div class="mr-2">{{item.type | titlecase}}
                           </div>
                           <span class="opacity-70">{{ item.created.createdAt | date: 'MMMM d, y' }}</span>
                         </div>
@@ -64,7 +64,7 @@
                         <div class="d-flex justify-content-between mb-3">
                           <div class="text-small d-flex">
                             <div class="mr-2">
-                              <a href="#">Exordium</a>
+                              <a href="#">{{item.type | titlecase}}</a>
                             </div>
                             <span class="text-muted">{{ item.created.createdAt | date: 'MMMM d, y' }}</span>
                           </div>
