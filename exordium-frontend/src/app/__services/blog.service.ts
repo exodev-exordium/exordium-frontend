@@ -48,7 +48,7 @@ export class BlogService {
   
     // Get Specific Post
     getPost(id): Observable<any> {
-      const api = `${this.endpoint}/public/blog/${id}`;
+      const api = `${this.endpoint}/public/blog/post/${id}`;
       return this.http.get(api, { headers: this.headers }).pipe(
           map(
               (res: Response) => {
