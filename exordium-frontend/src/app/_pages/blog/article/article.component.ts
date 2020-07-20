@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { CDN } from 'src/app/__services/shared/api.shared';
 import { BlogService } from 'src/app/__services/blog.service';
 
-import * as $ from 'jquery';
 import { jarallax, jarallaxElement } from 'jarallax';
 
 @Component({
@@ -19,6 +19,7 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private titleService: Title,
     private router: Router,
     private blogService: BlogService
   ) { }
@@ -29,9 +30,10 @@ export class ArticleComponent implements OnInit {
       this.post = res;
       console.log(res);
 
-      if (!res[0].url) { // no response
-        // redirect to error not found page
+      if (!res[0].url) { // no response for this url
         this.router.navigate(['/error/404']);
+      } else {
+        this.titleService.setTitle(`Exordium - ${res[0].title}`);
       }
     });
   }
