@@ -28,7 +28,6 @@ export class ArticleComponent implements OnInit {
     // Get Blog Data
     this.blogService.getPost(this.route.snapshot.paramMap.get("post")).subscribe(res => {
       this.post = res;
-      console.log(res);
 
       if (!res[0].url) { // no response for this url
         this.router.navigate(['/error/404']);

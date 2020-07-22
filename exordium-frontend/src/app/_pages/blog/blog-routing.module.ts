@@ -25,7 +25,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'author/:title/:username',
+        path: 'author/:username/:title',
         component: AuthorComponent,
         data: {
           title: 'Author'

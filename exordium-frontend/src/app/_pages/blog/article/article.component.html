@@ -21,12 +21,12 @@
 
                     <h1>{{ item.title }}</h1>
                     <div class="d-flex align-items-center">
-                        <a href="javascript:;" routerLink="/blog/author/{{ item.author.title.charAt(0) | lowercase }}/{{ item.author.username }}">
+                        <a href="javascript:;" routerLink="/blog/author/{{ item.author.username }}/{{ item.author.title | lowercase }}">
                             <img src="{{ getProfile(item.author.profilepic) }}" alt="{{ item.author.username }}" class="avatar mr-2">
                         </a>
                         <div>
                             <div>
-                                by <a href="javascript:;" routerLink="/blog/author/{{ item.author.title.charAt(0) | lowercase }}/{{ item.author.username }}">
+                                by <a href="javascript:;" routerLink="/blog/author/{{ item.author.username }}/{{ item.author.title | lowercase }}">
                                     <i class="fas fa-badge-check text-primary" *ngIf="item.author.title === 'Developer'"></i>
                                     <i class="fas fa-star text-warning" *ngIf="item.author.title !== 'Developer'"></i>
                                     {{ item.author.username | titlecase }}

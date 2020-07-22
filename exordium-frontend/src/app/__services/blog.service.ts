@@ -33,29 +33,41 @@ export class BlogService {
     return throwError(msg);
   }
 
-    // Get 5 Recent Posts
-    getPosts(): Observable<any> {
-      const api = `${this.endpoint}/public/blog`;
-      return this.http.get(api, { headers: this.headers }).pipe(
-          map(
-              (res: Response) => {
-                  return res || {};
-              }
-          ),
-          catchError(this.handleError)
-      );
-    }
-  
-    // Get Specific Post
-    getPost(id): Observable<any> {
-      const api = `${this.endpoint}/public/blog/post/${id}`;
-      return this.http.get(api, { headers: this.headers }).pipe(
-          map(
-              (res: Response) => {
-                  return res || {};
-              }
-          ),
-          catchError(this.handleError)
-      );
-    }
+  getPosts(): Observable<any> {
+    const api = `${this.endpoint}/public/blog`;
+    return this.http.get(api, { headers: this.headers }).pipe(
+        map(
+            (res: Response) => {
+                return res || {};
+            }
+        ),
+        catchError(this.handleError)
+    );
+  }
+
+  // Get Specific Post
+  getPost(url): Observable<any> {
+    const api = `${this.endpoint}/public/blog/post/${url}`;
+    return this.http.get(api, { headers: this.headers }).pipe(
+        map(
+            (res: Response) => {
+                return res || {};
+            }
+        ),
+        catchError(this.handleError)
+    );
+  }
+
+  // Get an author
+  getAuthor(username, title): Observable<any> {
+    const api = `${this.endpoint}/public/blog/author/${username}/${title}`;
+    return this.http.get(api, { headers: this.headers }).pipe(
+        map(
+            (res: Response) => {
+                return res || {};
+            }
+        ),
+        catchError(this.handleError)
+    );
+  }
 }
